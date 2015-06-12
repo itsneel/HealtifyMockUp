@@ -16,22 +16,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	
+	// set title of navigation bar
+	[self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
+	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20,20,0,30)];
+	titleLabel.backgroundColor = [UIColor clearColor];
+	titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:20.0f];
+	titleLabel.textColor = [UIColor whiteColor];
+	titleLabel.text =@"HealthifyMe";
+	[self.navigationItem setTitleView:titleLabel];
+	
+	
+
+	
+	
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
