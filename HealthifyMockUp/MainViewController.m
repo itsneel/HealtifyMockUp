@@ -10,12 +10,13 @@
 
 @interface MainViewController (){
 	UIColor * BGColor;
+	PageContentViewController *startingViewController;
 }
 
 @end
 
 @implementation MainViewController
-int count = 3;
+int CNT = 0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,16 +25,9 @@ int count = 3;
 	
 	
 	// SUB VIEWS
-
-	_bgColors = @[[UIColor redColor], [UIColor blackColor], [UIColor blueColor]];
-	
 	accordion = [[AccordionView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)];
 	[self.view addSubview:accordion];
 	self.view.backgroundColor = [UIColor colorWithRed:0.925 green:0.941 blue:0.945 alpha:1.000];
-	
-	
-	self.pageViewController1 = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
-	self.pageViewController1.dataSource = self;
 	
 	UIPageControl *pageControl = [UIPageControl appearance];
 	pageControl.pageIndicatorTintColor = [UIColor colorWithWhite:1 alpha:0.5];
@@ -41,32 +35,13 @@ int count = 3;
 	pageControl.backgroundColor = [UIColor clearColor];
 	pageControl.frame = CGRectMake(0, 0, 320, 10);
 	
-	PageContentViewController *startingViewController1 = [self viewControllerAtIndex:0];
-	NSArray *viewControllers1 = @[startingViewController1];
-	[self.pageViewController1 setViewControllers:viewControllers1 direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-	[self.pageViewController1 didMoveToParentViewController:self];
-
-	[accordion addHeader:[self createHeaderView:@"0 of 1850 Cal eaten" color:[UIColor colorWithRed:0.102 green:0.737 blue:0.612 alpha:1.000] slider:YES] withView:[self createView:[UIColor colorWithRed:0.086 green:0.627 blue:0.522 alpha:1.000] count:1]];
-
-	self.pageViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
-	self.pageViewController2.dataSource = self;
-
-	PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
-	NSArray *viewControllers = @[startingViewController];
-	[self.pageViewController2 setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-	[self.pageViewController2 didMoveToParentViewController:self];
-
-	[accordion addHeader:[self createHeaderView:@"0 of 372 Cal burnt" color:[UIColor colorWithRed:0.608 green:0.349 blue:0.714 alpha:1.000] slider:YES] withView:[self createView:[UIColor colorWithRed:0.557 green:0.267 blue:0.678 alpha:1.000] count:2]];
+	startingViewController = [self viewControllerAtIndex:0];
 	
-	self.pageViewController3 = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
-	self.pageViewController3.dataSource = self;
+	[accordion addHeader:[self createHeaderView:@"0 of 1850 Cal eaten" color:[UIColor colorWithRed:0.102 green:0.737 blue:0.612 alpha:1.000] slider:YES count:1] withView:[self createView:[UIColor colorWithRed:0.086 green:0.627 blue:0.522 alpha:1.000] count:1]];
 
-	PageContentViewController *startingViewController3 = [self viewControllerAtIndex:0];
-	NSArray *viewControllers3 = @[startingViewController3];
-	[self.pageViewController3 setViewControllers:viewControllers3 direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-	[self.pageViewController3 didMoveToParentViewController:self];
+	[accordion addHeader:[self createHeaderView:@"0 of 372 Cal burnt" color:[UIColor colorWithRed:0.608 green:0.349 blue:0.714 alpha:1.000] slider:YES count:2] withView:[self createView:[UIColor colorWithRed:0.557 green:0.267 blue:0.678 alpha:1.000] count:2]];
 
-	[accordion addHeader:[self createHeaderView:@"62.0 kgs - Set Goal" color:[UIColor colorWithRed:0.902 green:0.494 blue:0.133 alpha:1.000] slider:NO] withView:[self createView:[UIColor colorWithRed:0.827 green:0.329 blue:0.000 alpha:1.000] count:3]];
+	[accordion addHeader:[self createHeaderView:@"62.0 kgs - Set Goal" color:[UIColor colorWithRed:0.902 green:0.494 blue:0.133 alpha:1.000] slider:NO count:3] withView:[self createView:[UIColor colorWithRed:0.827 green:0.329 blue:0.000 alpha:1.000] count:3]];
 	
 	[accordion setNeedsLayout];
 	[accordion setAllowsMultipleSelection:YES];
@@ -84,7 +59,7 @@ int count = 3;
 	[self.navigationItem setTitleView:titleLabel];
 }
 
--(UIButton *)createHeaderView:(NSString *)title color:(UIColor *)color slider:(BOOL)slider{
+-(UIButton *)createHeaderView:(NSString *)title color:(UIColor *)color slider:(BOOL)slider count:(int)count{
 	UIButton *header = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 70)];
 	[header setTitle:title forState:UIControlStateNormal];
 	header.backgroundColor = color;
@@ -98,17 +73,35 @@ int count = 3;
 	header.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
 	header.contentEdgeInsets = UIEdgeInsetsMake(0, 40, 10, 0);
 	[self addSideButton:header color:color];
+	
+	switch (count) {
+		case 1:
+			[self addLeftImage:header imageName:@"1.png"];
+			break;
+		case 2:
+			[self addLeftImage:header imageName:@"2.png"];
+			break;
+		case 3:
+			[self addLeftImage:header imageName:@"3.png"];
+			break;
+		default:
+			break;
+	}
+	[self addRightImage:header];
 	return header;
 }
 
--(void)addLeftImage:(id)sender{
-	
-	
+-(void)addLeftImage:(id)sender imageName:(NSString *)imageName{
+	UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(10, (((UIButton *)sender).frame.size.height - 20)/2 , 20, 20)];
+	image.image = [UIImage imageNamed:imageName];
+	[sender addSubview:image];
 }
 
 -(void)addRightImage:(id)sender{
-	
-	
+	UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(245, (((UIButton *)sender).frame.size.height - 20)/2 , 20, 20)];
+	image.image = [UIImage imageNamed:@"3.png"];
+	image.tag = 1989;
+	[sender addSubview:image];
 }
 
 -(void)addSlider:(id)sender{
@@ -139,48 +132,48 @@ int count = 3;
 	view.backgroundColor = color;
 	switch (count) {
 		case 1:
-			// Change the size of page view controller
-			self.pageViewController1.view.frame = CGRectMake(0, 0, 0, 200);
-			
-			[self addChildViewController:_pageViewController1];
-			[view addSubview:_pageViewController1.view];
-			[self.pageViewController1 didMoveToParentViewController:self];
-			
+			self.firstPageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+			self.firstPageViewController.dataSource = self;
+			[self.firstPageViewController setViewControllers:@[startingViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+			[self.firstPageViewController didMoveToParentViewController:self];
+			self.firstPageViewController.view.frame = CGRectMake(0, 0, 0, 200);
+			[self addChildViewController:_firstPageViewController];
+			[view addSubview:_firstPageViewController.view];
+			[self.firstPageViewController didMoveToParentViewController:self];
 			break;
 		case 2:
-			// Change the size of page view controller
-			self.pageViewController2.view.frame = CGRectMake(0, 0, 0, 200);
-			
-			[self addChildViewController:_pageViewController2];
-			[view addSubview:_pageViewController2.view];
-			[self.pageViewController2 didMoveToParentViewController:self];
-			
+			self.secondPageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+			self.secondPageViewController.dataSource = self;
+			[self.secondPageViewController setViewControllers:@[startingViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+			[self.secondPageViewController didMoveToParentViewController:self];
+			self.secondPageViewController.view.frame = CGRectMake(0, 0, 0, 200);
+			[self addChildViewController:_secondPageViewController];
+			[view addSubview:_secondPageViewController.view];
+			[self.secondPageViewController didMoveToParentViewController:self];
 			break;
 		case 3:
-			// Change the size of page view controller
-			self.pageViewController3.view.frame = CGRectMake(0, 0, 0, 200);
-			
-			[self addChildViewController:_pageViewController3];
-			[view addSubview:_pageViewController3.view];
-			[self.pageViewController3 didMoveToParentViewController:self];
-			
+			self.thirdPageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+			self.thirdPageViewController.dataSource = self;
+			[self.thirdPageViewController setViewControllers:@[startingViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+			[self.thirdPageViewController didMoveToParentViewController:self];
+			self.thirdPageViewController.view.frame = CGRectMake(0, 0, 0, 200);
+			[self addChildViewController:_thirdPageViewController];
+			[view addSubview:_thirdPageViewController.view];
+			[self.thirdPageViewController didMoveToParentViewController:self];
 			break;
 	    default:
 			break;
 	}
+	CNT = count;
 	return view;
 }
 
-- (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index {
-	
-	if ((index >= 3))
-		return nil;
-		
-	// Create a new view controller and pass suitable data.
-	PageContentViewController * view = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
-	view.BGCOLOR = [self.bgColors objectAtIndex:index];
+- (UIViewController *)viewControllerAtIndex:(NSUInteger)index {
+	if ((index > 2))
+			return nil;
+	PageContentViewController * view;
+	view = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController3"];
 	view.pageIndex = index;
-	
 	return view;
 }
 
@@ -189,11 +182,9 @@ int count = 3;
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
 	NSUInteger index = ((PageContentViewController *) viewController).pageIndex;
-	
 	if ((index == 0) || (index == NSNotFound)) {
 		return nil;
 	}
-	
 	index--;
 	return [self viewControllerAtIndex:index];
 }
@@ -201,11 +192,9 @@ int count = 3;
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
 	NSUInteger index = ((PageContentViewController *) viewController).pageIndex;
-	
 	if (index == NSNotFound) {
 		return nil;
 	}
-	
 	index++;
 	return [self viewControllerAtIndex:index];
 }

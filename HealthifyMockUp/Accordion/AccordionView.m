@@ -21,7 +21,7 @@
 	
 	self.backgroundColor = [UIColor clearColor];
 	
-	scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [self frame].size.width, [self frame].size.height- 44)];
+	scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 20, [self frame].size.width, [self frame].size.height- 64)];
 	scrollView.backgroundColor = [UIColor clearColor];
 	scrollView.bounces = NO;
 	scrollView.contentOffset = CGPointMake(0, 100.0);
@@ -138,6 +138,7 @@
 }
 
 - (void)touchDown:(id)sender {
+	
 	if (allowsMultipleSelection) {
 		NSMutableIndexSet *mis = [selectionIndexes mutableCopy];
 		if ([selectionIndexes containsIndex:[sender tag]]) {
@@ -157,6 +158,10 @@
 			[self setSelectedIndex:[sender tag]];
 		}
 	}
+	
+	[UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+		[((UIButton *)sender) viewWithTag:1989].transform = CGAffineTransformMakeRotation(3.14159265);
+	} completion:nil];
 }
 
 - (void)animationDone {

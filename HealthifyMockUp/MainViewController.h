@@ -14,12 +14,8 @@
 	AccordionView * accordion;
 }
 
-@property (strong, nonatomic) UIPageViewController *pageViewController1;
-
-@property (strong, nonatomic) UIPageViewController *pageViewController2;
-
-@property (strong, nonatomic) UIPageViewController *pageViewController3;
-
-@property (strong, nonatomic) NSArray *bgColors;
+@property (strong, nonatomic) UIPageViewController *firstPageViewController;
+@property (strong, nonatomic) UIPageViewController *secondPageViewController;
+@property (strong, nonatomic) UIPageViewController *thirdPageViewController;
 
 @end

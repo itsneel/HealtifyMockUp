@@ -1,5 +1,5 @@
 //
-//  PageContentViewController.m
+//  FirstPageContentViewController.m
 //  HealthifyMockUp
 //
 //  Created by Neelanshu Goyal on 12/06/15.

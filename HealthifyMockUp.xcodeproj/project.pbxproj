@@ -16,6 +16,10 @@
 		AAC98BAB1B2A13AA00BCB75E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC98BA91B2A13AA00BCB75E /* LaunchScreen.xib */; };
 		AAC98BB71B2A13AA00BCB75E /* HealthifyMockUpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC98BB61B2A13AA00BCB75E /* HealthifyMockUpTests.m */; };
 		AAC98BC71B2A202D00BCB75E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC98BC61B2A202D00BCB75E /* MainViewController.m */; };
+		AAF79F681B2C64D700CEF03E /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF79F651B2C64D700CEF03E /* 3.png */; };
+		AAF79F691B2C64D700CEF03E /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF79F661B2C64D700CEF03E /* 2.png */; };
+		AAF79F6A1B2C64D700CEF03E /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF79F671B2C64D700CEF03E /* 1.png */; };
+		AAF79F6C1B2C674E00CEF03E /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAF79F6B1B2C674E00CEF03E /* image.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		AAC98BB61B2A13AA00BCB75E /* HealthifyMockUpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthifyMockUpTests.m; sourceTree = "<group>"; };
 		AAC98BC51B2A202D00BCB75E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		AAC98BC61B2A202D00BCB75E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		AAF79F651B2C64D700CEF03E /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		AAF79F661B2C64D700CEF03E /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		AAF79F671B2C64D700CEF03E /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		AAF79F6B1B2C674E00CEF03E /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,10 @@
 		AAC98B9A1B2A13AA00BCB75E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AAF79F6B1B2C674E00CEF03E /* image.jpg */,
+				AAF79F651B2C64D700CEF03E /* 3.png */,
+				AAF79F661B2C64D700CEF03E /* 2.png */,
+				AAF79F671B2C64D700CEF03E /* 1.png */,
 				AAC98B9B1B2A13AA00BCB75E /* Info.plist */,
 				AAC98B9C1B2A13AA00BCB75E /* main.m */,
 			);
@@ -226,7 +238,11 @@
 			files = (
 				AAC98BA61B2A13AA00BCB75E /* Main.storyboard in Resources */,
 				AAC98BAB1B2A13AA00BCB75E /* LaunchScreen.xib in Resources */,
+				AAF79F691B2C64D700CEF03E /* 2.png in Resources */,
+				AAF79F6A1B2C64D700CEF03E /* 1.png in Resources */,
+				AAF79F6C1B2C674E00CEF03E /* image.jpg in Resources */,
 				AAC98BA81B2A13AA00BCB75E /* Images.xcassets in Resources */,
+				AAF79F681B2C64D700CEF03E /* 3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
