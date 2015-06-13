@@ -107,12 +107,12 @@
 			children = (
 				AAC98B9E1B2A13AA00BCB75E /* AppDelegate.h */,
 				AAC98B9F1B2A13AA00BCB75E /* AppDelegate.m */,
-				AAC98BA41B2A13AA00BCB75E /* Main.storyboard */,
 				AAC98BC51B2A202D00BCB75E /* MainViewController.h */,
 				AAC98BC61B2A202D00BCB75E /* MainViewController.m */,
 				AA6099181B2C223000C6920F /* PageContentViewController */,
 				AA6099141B2C127A00C6920F /* Accordion */,
 				AAC98BA91B2A13AA00BCB75E /* LaunchScreen.xib */,
+				AAC98BA41B2A13AA00BCB75E /* Main.storyboard */,
 				AAC98BA71B2A13AA00BCB75E /* Images.xcassets */,
 				AAC98B9A1B2A13AA00BCB75E /* Supporting Files */,
 			);

@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	self.view.backgroundColor = self.BGCOLOR;
+	self.view.backgroundColor = [UIColor clearColor];
 }
 
 - (void)didReceiveMemoryWarning

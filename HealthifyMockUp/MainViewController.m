@@ -15,6 +15,7 @@
 @end
 
 @implementation MainViewController
+int count = 3;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,13 +25,12 @@
 	
 	// SUB VIEWS
 
-	_bgColors = @[[UIColor redColor], [UIColor blackColor], [UIColor blueColor], [UIColor greenColor]];
-	
-
+	_bgColors = @[[UIColor redColor], [UIColor blackColor], [UIColor blueColor]];
 	
 	accordion = [[AccordionView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)];
 	[self.view addSubview:accordion];
 	self.view.backgroundColor = [UIColor colorWithRed:0.925 green:0.941 blue:0.945 alpha:1.000];
+	
 	
 	self.pageViewController1 = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
 	self.pageViewController1.dataSource = self;
@@ -39,6 +39,7 @@
 	pageControl1.pageIndicatorTintColor = [UIColor redColor];
 	pageControl1.currentPageIndicatorTintColor = [UIColor greenColor];
 	pageControl1.backgroundColor = [UIColor clearColor];
+	pageControl1.frame = CGRectMake(0, 0, 320, 10);
 	
 	PageContentViewController *startingViewController1 = [self viewControllerAtIndex:0];
 	NSArray *viewControllers1 = @[startingViewController1];
@@ -47,14 +48,13 @@
 
 	[accordion addHeader:[self createHeaderView:@"0 of 1850 Cal eaten" color:[UIColor colorWithRed:0.102 green:0.737 blue:0.612 alpha:1.000] slider:YES] withView:[self createView:[UIColor colorWithRed:0.086 green:0.627 blue:0.522 alpha:1.000] count:1]];
 
-	
 	self.pageViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
 	self.pageViewController2.dataSource = self;
 	UIPageControl *pageControl2 = [UIPageControl appearance];
 	pageControl2.pageIndicatorTintColor = [UIColor redColor];
 	pageControl2.currentPageIndicatorTintColor = [UIColor greenColor];
 	pageControl2.backgroundColor = [UIColor clearColor];
-	
+	pageControl2.frame = CGRectMake(0, 0, 320, 10);
 	PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
 	NSArray *viewControllers = @[startingViewController];
 	[self.pageViewController2 setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -62,14 +62,13 @@
 
 	[accordion addHeader:[self createHeaderView:@"0 of 372 Cal burnt" color:[UIColor colorWithRed:0.608 green:0.349 blue:0.714 alpha:1.000] slider:YES] withView:[self createView:[UIColor colorWithRed:0.557 green:0.267 blue:0.678 alpha:1.000] count:2]];
 	
-
 	self.pageViewController3 = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
 	self.pageViewController3.dataSource = self;
 	UIPageControl *pageControl3 = [UIPageControl appearance];
 	pageControl3.pageIndicatorTintColor = [UIColor redColor];
 	pageControl3.currentPageIndicatorTintColor = [UIColor greenColor];
 	pageControl3.backgroundColor = [UIColor clearColor];
-	
+	pageControl3.frame = CGRectMake(0, 0, 320, 10);
 	PageContentViewController *startingViewController3 = [self viewControllerAtIndex:0];
 	NSArray *viewControllers3 = @[startingViewController3];
 	[self.pageViewController3 setViewControllers:viewControllers3 direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -94,7 +93,7 @@
 }
 
 -(UIButton *)createHeaderView:(NSString *)title color:(UIColor *)color slider:(BOOL)slider{
-	UIButton *header = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 60)];
+	UIButton *header = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 70)];
 	[header setTitle:title forState:UIControlStateNormal];
 	header.backgroundColor = color;
 	header.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -119,7 +118,7 @@
 }
 
 -(void)addSlider:(id)sender{
-	UISlider * slider = [[UISlider alloc] initWithFrame:CGRectMake(40, 40, 200, 10)];
+	UISlider * slider = [[UISlider alloc] initWithFrame:CGRectMake(40, 50, 200, 10)];
 	slider.minimumTrackTintColor = [UIColor greenColor];
 	slider.maximumTrackTintColor = [UIColor redColor];
 	slider.thumbTintColor = [UIColor clearColor];
@@ -142,12 +141,12 @@
 }
 
 -(UIView *)createView:(UIColor *)color count:(int)count{
-	UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 150)];
+	UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 190)];
 	view.backgroundColor = color;
 	switch (count) {
 		case 1:
 			// Change the size of page view controller
-			self.pageViewController1.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 100);
+			self.pageViewController1.view.frame = CGRectMake(0, 0, 0, 200);
 			
 			[self addChildViewController:_pageViewController1];
 			[view addSubview:_pageViewController1.view];
@@ -156,7 +155,7 @@
 			break;
 		case 2:
 			// Change the size of page view controller
-			self.pageViewController2.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 100);
+			self.pageViewController2.view.frame = CGRectMake(0, 0, 0, 200);
 			
 			[self addChildViewController:_pageViewController2];
 			[view addSubview:_pageViewController2.view];
@@ -165,7 +164,7 @@
 			break;
 		case 3:
 			// Change the size of page view controller
-			self.pageViewController3.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 100);
+			self.pageViewController3.view.frame = CGRectMake(0, 0, 0, 200);
 			
 			[self addChildViewController:_pageViewController3];
 			[view addSubview:_pageViewController3.view];
@@ -175,14 +174,12 @@
 	    default:
 			break;
 	}
-
-	
 	return view;
 }
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index {
 	
-	if ((index >= [self.bgColors count]))
+	if ((index >= 3))
 		return nil;
 		
 	// Create a new view controller and pass suitable data.
@@ -220,7 +217,7 @@
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-	return [self.bgColors count];
+	return 3;
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
