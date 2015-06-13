@@ -35,11 +35,11 @@ int count = 3;
 	self.pageViewController1 = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
 	self.pageViewController1.dataSource = self;
 	
-	UIPageControl *pageControl1 = [UIPageControl appearance];
-	pageControl1.pageIndicatorTintColor = [UIColor redColor];
-	pageControl1.currentPageIndicatorTintColor = [UIColor greenColor];
-	pageControl1.backgroundColor = [UIColor clearColor];
-	pageControl1.frame = CGRectMake(0, 0, 320, 10);
+	UIPageControl *pageControl = [UIPageControl appearance];
+	pageControl.pageIndicatorTintColor = [UIColor colorWithWhite:1 alpha:0.5];
+	pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+	pageControl.backgroundColor = [UIColor clearColor];
+	pageControl.frame = CGRectMake(0, 0, 320, 10);
 	
 	PageContentViewController *startingViewController1 = [self viewControllerAtIndex:0];
 	NSArray *viewControllers1 = @[startingViewController1];
@@ -50,11 +50,7 @@ int count = 3;
 
 	self.pageViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
 	self.pageViewController2.dataSource = self;
-	UIPageControl *pageControl2 = [UIPageControl appearance];
-	pageControl2.pageIndicatorTintColor = [UIColor redColor];
-	pageControl2.currentPageIndicatorTintColor = [UIColor greenColor];
-	pageControl2.backgroundColor = [UIColor clearColor];
-	pageControl2.frame = CGRectMake(0, 0, 320, 10);
+
 	PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
 	NSArray *viewControllers = @[startingViewController];
 	[self.pageViewController2 setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -64,11 +60,7 @@ int count = 3;
 	
 	self.pageViewController3 = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
 	self.pageViewController3.dataSource = self;
-	UIPageControl *pageControl3 = [UIPageControl appearance];
-	pageControl3.pageIndicatorTintColor = [UIColor redColor];
-	pageControl3.currentPageIndicatorTintColor = [UIColor greenColor];
-	pageControl3.backgroundColor = [UIColor clearColor];
-	pageControl3.frame = CGRectMake(0, 0, 320, 10);
+
 	PageContentViewController *startingViewController3 = [self viewControllerAtIndex:0];
 	NSArray *viewControllers3 = @[startingViewController3];
 	[self.pageViewController3 setViewControllers:viewControllers3 direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -103,6 +95,8 @@ int count = 3;
 	if (slider) {
 		[self addSlider:header];
 	}
+	header.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+	header.contentEdgeInsets = UIEdgeInsetsMake(0, 40, 10, 0);
 	[self addSideButton:header color:color];
 	return header;
 }

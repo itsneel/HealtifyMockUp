@@ -21,8 +21,10 @@
 	
 	self.backgroundColor = [UIColor clearColor];
 	
-	scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [self frame].size.width, [self frame].size.height)];
+	scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [self frame].size.width, [self frame].size.height- 44)];
 	scrollView.backgroundColor = [UIColor clearColor];
+	scrollView.bounces = NO;
+	scrollView.contentOffset = CGPointMake(0, 100.0);
 	[self addSubview:scrollView];
 	
 	self.userInteractionEnabled = YES;
@@ -38,7 +40,7 @@
 	
 	self.allowsMultipleSelection = NO;
 	
-	self.startsClosed = NO;
+	self.startsClosed = YES;
 	
 	self.allowsEmptySelection = YES;
 	
@@ -89,35 +91,6 @@
 	}
 }
 
-- (void)removeHeaderAtIndex:(NSInteger)index {
-	if (index > [headers count] - 1) return;
-	
-	NSMutableIndexSet *cleanIndexes = [NSMutableIndexSet new];
-	[selectionIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-		if (idx == index) return;
-		if (idx > index) idx--;
-		
-		[cleanIndexes addIndex:idx];
-	}];
-	
-	for (UIView *aHeader in headers) {
-		if (aHeader.tag > index) {
-			aHeader.tag--;
-		}
-	}
-	UIView *aHeader = [headers objectAtIndex:index];
-	[aHeader removeFromSuperview];
-	[headers removeObjectAtIndex:index];
-	
-	
-	UIView *aView = [views objectAtIndex:index];
-	[aView removeFromSuperview];
-	[views removeObjectAtIndex:index];
-	
-	[originalSizes removeObjectAtIndex:index];
-	
-	[self setSelectionIndexes:cleanIndexes];
-}
 
 - (void)setSelectionIndexes:(NSIndexSet *)aSelectionIndexes {
 	if ([headers count] == 0) return;
