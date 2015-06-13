@@ -7,9 +7,10 @@
 //
 
 #import "MainViewController.h"
+#import "NextViewController.h"
 
 @interface MainViewController (){
-	UIColor * BGColor;
+	UIColor * colorOne,* colorTwo,* colorThree;
 	PageContentViewController *startingViewController;
 }
 
@@ -22,8 +23,9 @@ int CNT = 0;
     [super viewDidLoad];
 	
 	[self navigationBarTitle];
-	
-	
+	colorOne = [UIColor colorWithRed:0.102 green:0.737 blue:0.612 alpha:1.000];
+	colorTwo = [UIColor colorWithRed:0.608 green:0.349 blue:0.714 alpha:1.000];
+	colorThree = [UIColor colorWithRed:0.902 green:0.494 blue:0.133 alpha:1.000];
 	// SUB VIEWS
 	accordion = [[AccordionView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)];
 	[self.view addSubview:accordion];
@@ -37,11 +39,11 @@ int CNT = 0;
 	
 	startingViewController = [self viewControllerAtIndex:0];
 	
-	[accordion addHeader:[self createHeaderView:@"0 of 1850 Cal eaten" color:[UIColor colorWithRed:0.102 green:0.737 blue:0.612 alpha:1.000] slider:YES count:1] withView:[self createView:[UIColor colorWithRed:0.086 green:0.627 blue:0.522 alpha:1.000] count:1]];
+	[accordion addHeader:[self createHeaderView:@"0 of 1850 Cal eaten" color:colorOne slider:YES count:1] withView:[self createView:[UIColor colorWithRed:0.086 green:0.627 blue:0.522 alpha:1.000] count:1]];
 
-	[accordion addHeader:[self createHeaderView:@"0 of 372 Cal burnt" color:[UIColor colorWithRed:0.608 green:0.349 blue:0.714 alpha:1.000] slider:YES count:2] withView:[self createView:[UIColor colorWithRed:0.557 green:0.267 blue:0.678 alpha:1.000] count:2]];
+	[accordion addHeader:[self createHeaderView:@"0 of 372 Cal burnt" color:colorTwo slider:YES count:2] withView:[self createView:[UIColor colorWithRed:0.557 green:0.267 blue:0.678 alpha:1.000] count:2]];
 
-	[accordion addHeader:[self createHeaderView:@"62.0 kgs - Set Goal" color:[UIColor colorWithRed:0.902 green:0.494 blue:0.133 alpha:1.000] slider:NO count:3] withView:[self createView:[UIColor colorWithRed:0.827 green:0.329 blue:0.000 alpha:1.000] count:3]];
+	[accordion addHeader:[self createHeaderView:@"62.0 kgs - Set Goal" color:colorThree slider:NO count:3] withView:[self createView:[UIColor colorWithRed:0.827 green:0.329 blue:0.000 alpha:1.000] count:3]];
 	
 	[accordion setNeedsLayout];
 	[accordion setAllowsMultipleSelection:YES];
@@ -72,7 +74,7 @@ int CNT = 0;
 	}
 	header.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
 	header.contentEdgeInsets = UIEdgeInsetsMake(0, 40, 10, 0);
-	[self addSideButton:header color:color];
+	[self addSideButton:header color:color count:count];
 	
 	switch (count) {
 		case 1:
@@ -106,18 +108,20 @@ int CNT = 0;
 
 -(void)addSlider:(id)sender{
 	UISlider * slider = [[UISlider alloc] initWithFrame:CGRectMake(40, 50, 200, 10)];
-	slider.minimumTrackTintColor = [UIColor greenColor];
-	slider.maximumTrackTintColor = [UIColor redColor];
+	slider.minimumTrackTintColor = [UIColor whiteColor];
+	slider.maximumTrackTintColor = [UIColor colorWithWhite:0 alpha:0.1];
 	slider.thumbTintColor = [UIColor clearColor];
 	slider.userInteractionEnabled = NO;
 	[sender addSubview:slider];
 	[sender bringSubviewToFront:slider];
 }
 
--(void)addSideButton:(id)sender color:(UIColor *)color{
+-(void)addSideButton:(id)sender color:(UIColor *)color count:(int)count{
 	UIButton *sideButton = [[UIButton alloc] initWithFrame:CGRectMake(280, 0, 40, ((UIButton *)sender).frame.size.height)];
 	[sideButton setTitle:@"+" forState:UIControlStateNormal];
+	[sideButton addTarget:self action:@selector(next:) forControlEvents:UIControlEventTouchUpInside];
 	[sideButton setTintColor:[UIColor whiteColor]];
+	sideButton.tag = count;
 	sideButton.backgroundColor = color;
 	sideButton.layer.shadowColor = [UIColor blackColor].CGColor;
 	sideButton.layer.shadowOffset = CGSizeMake(-3, 0);
@@ -172,7 +176,7 @@ int CNT = 0;
 	if ((index > 2))
 			return nil;
 	PageContentViewController * view;
-	view = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController3"];
+	view = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
 	view.pageIndex = index;
 	return view;
 }
@@ -205,6 +209,25 @@ int CNT = 0;
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
 	return 0;
+}
+
+
+-(void)next:(id)sender{
+	[self performSegueWithIdentifier:@"next" sender:sender];
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+	NextViewController * next = [segue destinationViewController];
+	UIButton * b = (UIButton *)sender;
+	if (b.tag == 1) {
+		next.BGColor = colorOne;
+		next.text = @"HI You Tapped First Button";
+	} else if(b.tag == 2){
+		next.BGColor = colorTwo;
+		next.text = @"HI You Tapped Second Button";
+	} else {
+		next.BGColor = colorThree;
+		next.text = @"HI You Tapped Third Button";
+	}
 }
 
 @end

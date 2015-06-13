@@ -159,7 +159,7 @@
 		}
 	}
 	
-	[UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+	[UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
 		[((UIButton *)sender) viewWithTag:1989].transform = CGAffineTransformMakeRotation(3.14159265);
 	} completion:nil];
 }

@@ -20,6 +20,8 @@
 		AAF79F691B2C64D700CEF03E /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF79F661B2C64D700CEF03E /* 2.png */; };
 		AAF79F6A1B2C64D700CEF03E /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF79F671B2C64D700CEF03E /* 1.png */; };
 		AAF79F6C1B2C674E00CEF03E /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAF79F6B1B2C674E00CEF03E /* image.jpg */; };
+		AAF79F6E1B2C71F400CEF03E /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF79F6D1B2C71F400CEF03E /* menu.png */; };
+		AAF79F711B2C734D00CEF03E /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF79F701B2C734D00CEF03E /* NextViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,9 @@
 		AAF79F661B2C64D700CEF03E /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		AAF79F671B2C64D700CEF03E /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		AAF79F6B1B2C674E00CEF03E /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		AAF79F6D1B2C71F400CEF03E /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		AAF79F6F1B2C734D00CEF03E /* NextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
+		AAF79F701B2C734D00CEF03E /* NextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +122,8 @@
 				AAC98B9F1B2A13AA00BCB75E /* AppDelegate.m */,
 				AAC98BC51B2A202D00BCB75E /* MainViewController.h */,
 				AAC98BC61B2A202D00BCB75E /* MainViewController.m */,
+				AAF79F6F1B2C734D00CEF03E /* NextViewController.h */,
+				AAF79F701B2C734D00CEF03E /* NextViewController.m */,
 				AA6099181B2C223000C6920F /* PageContentViewController */,
 				AA6099141B2C127A00C6920F /* Accordion */,
 				AAC98BA91B2A13AA00BCB75E /* LaunchScreen.xib */,
@@ -130,6 +137,7 @@
 		AAC98B9A1B2A13AA00BCB75E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AAF79F6D1B2C71F400CEF03E /* menu.png */,
 				AAF79F6B1B2C674E00CEF03E /* image.jpg */,
 				AAF79F651B2C64D700CEF03E /* 3.png */,
 				AAF79F661B2C64D700CEF03E /* 2.png */,
@@ -236,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF79F6E1B2C71F400CEF03E /* menu.png in Resources */,
 				AAC98BA61B2A13AA00BCB75E /* Main.storyboard in Resources */,
 				AAC98BAB1B2A13AA00BCB75E /* LaunchScreen.xib in Resources */,
 				AAF79F691B2C64D700CEF03E /* 2.png in Resources */,
@@ -261,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAC98BA01B2A13AA00BCB75E /* AppDelegate.m in Sources */,
+				AAF79F711B2C734D00CEF03E /* NextViewController.m in Sources */,
 				AAC98BC71B2A202D00BCB75E /* MainViewController.m in Sources */,
 				AA60991B1B2C223000C6920F /* PageContentViewController.m in Sources */,
 				AAC98B9D1B2A13AA00BCB75E /* main.m in Sources */,
