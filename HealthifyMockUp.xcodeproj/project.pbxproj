@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA6099171B2C127A00C6920F /* AccordionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6099161B2C127A00C6920F /* AccordionView.m */; };
+		AA60991B1B2C223000C6920F /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA60991A1B2C223000C6920F /* PageContentViewController.m */; };
 		AAC98B9D1B2A13AA00BCB75E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC98B9C1B2A13AA00BCB75E /* main.m */; };
 		AAC98BA01B2A13AA00BCB75E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC98B9F1B2A13AA00BCB75E /* AppDelegate.m */; };
 		AAC98BA61B2A13AA00BCB75E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC98BA41B2A13AA00BCB75E /* Main.storyboard */; };
@@ -30,6 +31,8 @@
 /* Begin PBXFileReference section */
 		AA6099151B2C127A00C6920F /* AccordionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccordionView.h; sourceTree = "<group>"; };
 		AA6099161B2C127A00C6920F /* AccordionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccordionView.m; sourceTree = "<group>"; };
+		AA6099191B2C223000C6920F /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		AA60991A1B2C223000C6920F /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		AAC98B971B2A13AA00BCB75E /* HealthifyMockUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthifyMockUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC98B9B1B2A13AA00BCB75E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAC98B9C1B2A13AA00BCB75E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,6 +75,15 @@
 			path = Accordion;
 			sourceTree = "<group>";
 		};
+		AA6099181B2C223000C6920F /* PageContentViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA6099191B2C223000C6920F /* PageContentViewController.h */,
+				AA60991A1B2C223000C6920F /* PageContentViewController.m */,
+			);
+			path = PageContentViewController;
+			sourceTree = "<group>";
+		};
 		AAC98B8E1B2A13AA00BCB75E = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +110,7 @@
 				AAC98BA41B2A13AA00BCB75E /* Main.storyboard */,
 				AAC98BC51B2A202D00BCB75E /* MainViewController.h */,
 				AAC98BC61B2A202D00BCB75E /* MainViewController.m */,
+				AA6099181B2C223000C6920F /* PageContentViewController */,
 				AA6099141B2C127A00C6920F /* Accordion */,
 				AAC98BA91B2A13AA00BCB75E /* LaunchScreen.xib */,
 				AAC98BA71B2A13AA00BCB75E /* Images.xcassets */,
@@ -233,6 +246,7 @@
 			files = (
 				AAC98BA01B2A13AA00BCB75E /* AppDelegate.m in Sources */,
 				AAC98BC71B2A202D00BCB75E /* MainViewController.m in Sources */,
+				AA60991B1B2C223000C6920F /* PageContentViewController.m in Sources */,
 				AAC98B9D1B2A13AA00BCB75E /* main.m in Sources */,
 				AA6099171B2C127A00C6920F /* AccordionView.m in Sources */,
 			);

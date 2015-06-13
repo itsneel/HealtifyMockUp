@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="510" y="-43"/>
         </scene>
-        <!--View Controller-->
+        <!--Page Content View Controller-->
         <scene sceneID="cN1-SE-TFo">
             <objects>
-                <viewController id="VaD-xR-gNU" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageContentViewController" id="VaD-xR-gNU" customClass="PageContentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lop-qO-6M9"/>
                         <viewControllerLayoutGuide type="bottom" id="AxW-Hg-cUX"/>
