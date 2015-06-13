@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA6099171B2C127A00C6920F /* AccordionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6099161B2C127A00C6920F /* AccordionView.m */; };
 		AAC98B9D1B2A13AA00BCB75E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC98B9C1B2A13AA00BCB75E /* main.m */; };
 		AAC98BA01B2A13AA00BCB75E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC98B9F1B2A13AA00BCB75E /* AppDelegate.m */; };
 		AAC98BA61B2A13AA00BCB75E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC98BA41B2A13AA00BCB75E /* Main.storyboard */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA6099151B2C127A00C6920F /* AccordionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccordionView.h; sourceTree = "<group>"; };
+		AA6099161B2C127A00C6920F /* AccordionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccordionView.m; sourceTree = "<group>"; };
 		AAC98B971B2A13AA00BCB75E /* HealthifyMockUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthifyMockUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC98B9B1B2A13AA00BCB75E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAC98B9C1B2A13AA00BCB75E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA6099141B2C127A00C6920F /* Accordion */ = {
+			isa = PBXGroup;
+			children = (
+				AA6099151B2C127A00C6920F /* AccordionView.h */,
+				AA6099161B2C127A00C6920F /* AccordionView.m */,
+			);
+			path = Accordion;
+			sourceTree = "<group>";
+		};
 		AAC98B8E1B2A13AA00BCB75E = {
 			isa = PBXGroup;
 			children = (
@@ -86,8 +98,9 @@
 				AAC98BA41B2A13AA00BCB75E /* Main.storyboard */,
 				AAC98BC51B2A202D00BCB75E /* MainViewController.h */,
 				AAC98BC61B2A202D00BCB75E /* MainViewController.m */,
-				AAC98BA71B2A13AA00BCB75E /* Images.xcassets */,
+				AA6099141B2C127A00C6920F /* Accordion */,
 				AAC98BA91B2A13AA00BCB75E /* LaunchScreen.xib */,
+				AAC98BA71B2A13AA00BCB75E /* Images.xcassets */,
 				AAC98B9A1B2A13AA00BCB75E /* Supporting Files */,
 			);
 			path = HealthifyMockUp;
@@ -221,6 +234,7 @@
 				AAC98BA01B2A13AA00BCB75E /* AppDelegate.m in Sources */,
 				AAC98BC71B2A202D00BCB75E /* MainViewController.m in Sources */,
 				AAC98B9D1B2A13AA00BCB75E /* main.m in Sources */,
+				AA6099171B2C127A00C6920F /* AccordionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +361,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HealthifyMockUp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -358,7 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HealthifyMockUp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

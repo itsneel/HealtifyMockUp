@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AccordionView.h"
 
-@interface MainViewController : UIViewController <UIScrollViewDelegate>
+@interface MainViewController : UIViewController {
+	AccordionView * accordion;
+}
 
 @end
