@@ -45,5 +45,42 @@
             </objects>
             <point key="canvasLocation" x="118" y="94"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="tjL-yF-iby">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="bDS-KD-iOy" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="130"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xfb-2c-EoY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="510" y="-43"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cN1-SE-TFo">
+            <objects>
+                <viewController id="VaD-xR-gNU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lop-qO-6M9"/>
+                        <viewControllerLayoutGuide type="bottom" id="AxW-Hg-cUX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="USD-XH-wCh">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="130"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="130"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WfC-dG-08b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="510" y="223"/>
+        </scene>
     </scenes>
 </document>

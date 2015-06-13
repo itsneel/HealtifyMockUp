@@ -1,3 +1,10 @@
+//
+//  AccordionView.h
+//  HealthifyMockUp
+//
+//  Created by Neelanshu Goyal on 12/06/15.
+//
+//
 
 #import <UIKit/UIKit.h>
 
@@ -21,7 +28,6 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 
 @property (nonatomic, assign) NSInteger selectedIndex;
-@property (readonly) BOOL isHorizontal;
 @property (nonatomic, assign) NSTimeInterval animationDuration;
 @property (nonatomic, assign) UIViewAnimationCurve animationCurve;
 @property (nonatomic, assign) BOOL allowsMultipleSelection;
